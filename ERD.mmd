@@ -1,0 +1,61 @@
+erDiagram
+    department {
+        INTEGER department_id
+    }
+    student {
+        INTEGER student_id
+        DATE date_of_birth
+        INTEGER department_id
+    }
+    instructor {
+        INTEGER instructor_id
+        INTEGER department_id
+    }
+    course {
+        INTEGER course_id
+        INTEGER credit_hours
+        TEXT description
+        INTEGER department_id
+    }
+    semester {
+        INTEGER semester_id
+        INTEGER academic_year
+        DATE start_date
+        DATE end_date
+    }
+    classroom {
+        INTEGER classroom_id
+        INTEGER capacity
+    }
+    section {
+        INTEGER section_id
+        INTEGER maximum_capacity
+        INTEGER course_id
+        INTEGER instructor_id
+        INTEGER semester_id
+        INTEGER classroom_id
+    }
+    enrollment {
+        INTEGER enrollment_id
+        INTEGER student_id
+        INTEGER section_id
+        DATE enrollment_date
+    }
+    department ||--o{ student : references
+    department ||--o{ instructor : references
+    department ||--o{ course : references
+    course ||--o{ section : references
+    instructor ||--o{ section : references
+    semester ||--o{ section : references
+    classroom ||--o{ section : references
+    student ||--o{ enrollment : references
+    section ||--o{ enrollment : references
+    enrollment ||--o{ enrollment_audit : status_changes
+    enrollment_audit {
+        BIGINT audit_id
+        INTEGER enrollment_id
+        VARCHAR old_status
+        VARCHAR new_status
+        TIMESTAMPTZ changed_at
+        TEXT changed_by
+    }
