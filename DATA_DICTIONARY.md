@@ -6,7 +6,7 @@ Schema: `university_registration`. Types and nullability reflect `001_schema.sql
 
 | Column | Type | Meaning / constraints |
 |---|---|---|
-| `department_id` | `INTEGER` | Primary key; generated identity; nullable |
+| `department_id` | `INTEGER` | Primary key; generated identity; NOT NULL |
 | `department_name` | `VARCHAR(100)` | Attribute; NOT NULL; UNIQUE |
 | `office_location` | `VARCHAR(100)` | Attribute; nullable |
 | `phone_number` | `VARCHAR(30)` | Attribute; nullable |
@@ -15,7 +15,7 @@ Schema: `university_registration`. Types and nullability reflect `001_schema.sql
 
 | Column | Type | Meaning / constraints |
 |---|---|---|
-| `student_id` | `INTEGER` | Primary key; generated identity; nullable |
+| `student_id` | `INTEGER` | Primary key; generated identity; NOT NULL |
 | `first_name` | `VARCHAR(80)` | Attribute; NOT NULL |
 | `last_name` | `VARCHAR(80)` | Attribute; NOT NULL |
 | `email` | `VARCHAR(255)` | Attribute; NOT NULL; UNIQUE |
@@ -27,7 +27,7 @@ Schema: `university_registration`. Types and nullability reflect `001_schema.sql
 
 | Column | Type | Meaning / constraints |
 |---|---|---|
-| `instructor_id` | `INTEGER` | Primary key; generated identity; nullable |
+| `instructor_id` | `INTEGER` | Primary key; generated identity; NOT NULL |
 | `first_name` | `VARCHAR(80)` | Attribute; NOT NULL |
 | `last_name` | `VARCHAR(80)` | Attribute; NOT NULL |
 | `email` | `VARCHAR(255)` | Attribute; NOT NULL; UNIQUE |
@@ -38,7 +38,7 @@ Schema: `university_registration`. Types and nullability reflect `001_schema.sql
 
 | Column | Type | Meaning / constraints |
 |---|---|---|
-| `course_id` | `INTEGER` | Primary key; generated identity; nullable |
+| `course_id` | `INTEGER` | Primary key; generated identity; NOT NULL |
 | `course_code` | `VARCHAR(20)` | Attribute; NOT NULL; UNIQUE |
 | `course_name` | `VARCHAR(150)` | Attribute; NOT NULL |
 | `credit_hours` | `INTEGER` | Attribute; NOT NULL |
@@ -49,7 +49,7 @@ Schema: `university_registration`. Types and nullability reflect `001_schema.sql
 
 | Column | Type | Meaning / constraints |
 |---|---|---|
-| `semester_id` | `INTEGER` | Primary key; generated identity; nullable |
+| `semester_id` | `INTEGER` | Primary key; generated identity; NOT NULL |
 | `semester_name` | `VARCHAR(40)` | Attribute; NOT NULL |
 | `academic_year` | `INTEGER` | Attribute; NOT NULL |
 | `start_date` | `DATE` | Attribute; NOT NULL |
@@ -59,7 +59,7 @@ Schema: `university_registration`. Types and nullability reflect `001_schema.sql
 
 | Column | Type | Meaning / constraints |
 |---|---|---|
-| `classroom_id` | `INTEGER` | Primary key; generated identity; nullable |
+| `classroom_id` | `INTEGER` | Primary key; generated identity; NOT NULL |
 | `building_name` | `VARCHAR(100)` | Attribute; NOT NULL |
 | `room_number` | `VARCHAR(20)` | Attribute; NOT NULL |
 | `capacity` | `INTEGER` | Attribute; NOT NULL |
@@ -68,7 +68,7 @@ Schema: `university_registration`. Types and nullability reflect `001_schema.sql
 
 | Column | Type | Meaning / constraints |
 |---|---|---|
-| `section_id` | `INTEGER` | Primary key; generated identity; nullable |
+| `section_id` | `INTEGER` | Primary key; generated identity; NOT NULL |
 | `section_number` | `VARCHAR(20)` | Attribute; NOT NULL |
 | `schedule` | `VARCHAR(120)` | Attribute; NOT NULL |
 | `maximum_capacity` | `INTEGER` | Attribute; NOT NULL |
@@ -81,7 +81,7 @@ Schema: `university_registration`. Types and nullability reflect `001_schema.sql
 
 | Column | Type | Meaning / constraints |
 |---|---|---|
-| `enrollment_id` | `INTEGER` | Primary key; generated identity; nullable |
+| `enrollment_id` | `INTEGER` | Primary key; generated identity; NOT NULL |
 | `student_id` | `INTEGER` | Foreign key; NOT NULL |
 | `section_id` | `INTEGER` | Foreign key; NOT NULL |
 | `enrollment_date` | `DATE` | Attribute; NOT NULL |
